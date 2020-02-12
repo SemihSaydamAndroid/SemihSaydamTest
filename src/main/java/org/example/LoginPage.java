@@ -91,7 +91,7 @@ public class LoginPage {
         //Control "Sepetiniz Boş"
         WebElement emptyBasket = webDriver.findElement(By.cssSelector("h2[class='title']"));
         Assert.assertTrue("Sepetiniz boş değil",emptyBasket.equals("Sepetiniz Boş"));
-        //new WebDriverWait(webDriver,10);
+        //new WebDriverWait(webDriver,10);ss
 
 
 
