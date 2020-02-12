@@ -95,13 +95,6 @@ public class LoginPage {
 
 
 
-
-
-
-
-
-
-
         //Random rnd = new Random();
         //int index = rnd.nextInt(26)+1;
         //List<WebElement> productssName = webDriver.findElements(By.className("productName bold"));
