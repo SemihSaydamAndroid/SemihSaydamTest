@@ -56,7 +56,7 @@ public class LoginPage {
         //List<WebElement> products = webDriver.findElements(By.className("pro"));
         List<WebElement> products = webDriver.findElements(By.cssSelector("div[class='pro']"));
         //Random rnd = new Random();
-        //int index = rnd.nextInt(27)+4;
+        //int index = rnd.nextInt(27)+4;   5-32 arası benim listem
         products.get(5).click();
 
         WebElement productPrice = webDriver.findElement(By.cssSelector("input[class='productDisplayPrice']"));
