@@ -29,15 +29,12 @@ public class LoginPage {
         webDriver.get("https://www.n11.com/");
         Assert.assertEquals("n11.com - Alışverişin Uğurlu Adresi",webDriver.getTitle());  // Control .get("https://www.n11.com")
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.className("btnSignIn"))).click();
-       // webDriver.findElement(By.className("btnSignIn")).click();
         Assert.assertEquals("Giriş Yap - n11.com",webDriver.getTitle()); // Control Login page
-        webDriver.findElement(By.id("email")).clear();
+        webDriver.findElement(By.id("email")).clear();                     //clear e-mail text area
         webDriver.findElement(By.id("email")).sendKeys(username);         // write e-mail
-        webDriver.findElement(By.id("password")).clear();
+        webDriver.findElement(By.id("password")).clear();                //clear password text area
         webDriver.findElement(By.id("password")).sendKeys(password);     // write password
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.id("loginButton"))).click();
-        //webDriver.findElement(By.id("loginButton")).click();   //Click login button
-        //webDriver.findElement(By.id("searchData")).sendKeys("Bilgisayar");
         Assert.assertEquals("n11.com - Alışverişin Uğurlu Adresi",webDriver.getTitle());  // Control to Come back to Home page
 
         ////________________________________________________________________________________SEARCH______________________________________________________________________
@@ -45,7 +42,6 @@ public class LoginPage {
         WebElement searchData = webDriver.findElement(By.id("searchData"));
         searchData.sendKeys("Bilgisayar");
         searchData.sendKeys(Keys.ENTER);
-        //Bilgisayar yazdığımızı kontrol etme...WebElement searchResultText = webDriver.findElement(By.xpath("//*[@id=\"contentListing\"]/div/div/div[2]/section/div[1]/div[1]/h1"));
 
         ////________________________________________________________________________________2ND PAGE______________________________________________________________________
 
@@ -69,15 +65,13 @@ public class LoginPage {
 
         ////________________________________________________________________________________BASKET _________________________________________________________________________
 
+        // get the Search page price(for compare with basket prize)
         WebElement productPrice = webDriver.findElement(By.cssSelector("input[class='productDisplayPrice']"));
         String value = productPrice.getAttribute("value").toString();   // Search page price
 
         //Click "Sepete ekle" button
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[class='btn btnGrey btnAddBasket']"))).click();
-
-
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[class='btn btnBlack btnGoBasket']"))).click();  // go to basket
-        //webDriver.findElement(By.cssSelector("a[class='btn btnBlack btnGoBasket']")).click();
 
         // TODO Clear the basket (not working)____(i want to clear basket because if u have items in there you cant pass Control prize)
         //webDriverWait.until(ExpectedConditions.elementToBeClickable(By.id("allItemSelected"))).click();
@@ -89,7 +83,7 @@ public class LoginPage {
         WebElement productBasketPrice = webDriver.findElement(By.className("productPrice"));
         String basketValue = productBasketPrice.getAttribute("value").toString();
         //basketValue = "6423.55"; //Test my assertTure command line
-        Assert.assertTrue("Sayfadaki fiyat ile Sepetteki fiyat aynı değil!",value.equals(basketValue));
+        Assert.assertTrue("Sayfadaki fiyat ile Sepetteki fiyat aynı değil!",value.equals(basketValue));  // compare value of search page prize with basket prize
 
         //________________________________________________________________________INCREASE PRODUCT__________________________________________________________________________
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("span[class='spinnerUp spinnerArrow']"))).click(); // increase products to 2
