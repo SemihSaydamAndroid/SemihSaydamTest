@@ -43,6 +43,7 @@ public class LoginPage {
         searchData.sendKeys("Bilgisayar");
         searchData.sendKeys(Keys.ENTER);
 
+
         ////________________________________________________________________________________2ND PAGE______________________________________________________________________
 
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"contentListing\"]/div/div/div[2]/div[4]/a[2]"))).click();
@@ -104,6 +105,8 @@ public class LoginPage {
 
         webDriver.quit();
     }
+
+
 
 }
 
