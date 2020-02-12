@@ -90,8 +90,9 @@ public class LoginPage {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("span[title='Sil']"))).click();
         //Control "Sepetiniz Boş"
         WebElement emptyBasket = webDriver.findElement(By.cssSelector("h2[class='title']"));
-        Assert.assertTrue("Sepetiniz boş değil",emptyBasket.equals("Sepetiniz Boş"));
-        //new WebDriverWait(webDriver,10);ss
+        String controlEmpty = emptyBasket.getText().toString();
+        Assert.assertTrue("Sepetiniz boş değil",controlEmpty.equals("Sepetiniz Boş")); /// I try "Sepetinizzzz boş" for assertTrue. And it will work correctly
+
 
 
 
