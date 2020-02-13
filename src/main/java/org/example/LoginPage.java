@@ -47,9 +47,8 @@ public class LoginPage {
         ////________________________________________________________________________________2ND PAGE______________________________________________________________________
 
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"contentListing\"]/div/div/div[2]/div[4]/a[2]"))).click();
-        //webDriver.findElement(By.xpath("//*[@id=\"contentListing\"]/div/div/div[2]/div[4]/a[2]")).click();
-        ////control 2nd page
-        WebElement currentPage = webDriver.findElement(By.xpath("//*[@id=\"currentPage\"]"));
+
+        WebElement currentPage = webDriver.findElement(By.xpath("//*[@id=\"currentPage\"]"));  ////___________control 2nd page
         String page = currentPage.getAttribute("value").toString();
         Assert.assertTrue("2.sayfaya ulaşılamadı", page.equals("2"));
         ////
@@ -101,7 +100,6 @@ public class LoginPage {
         WebElement emptyBasket = webDriver.findElement(By.cssSelector("h2[class='title']"));
         String controlEmpty = emptyBasket.getText().toString();
         Assert.assertTrue("Sepetiniz boş değil",controlEmpty.equals("Sepetiniz Boş")); /// I try "Sepetinizzzz boş" for assertTrue. And it will work correctly
-
 
         webDriver.quit();
     }
