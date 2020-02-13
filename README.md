@@ -15,7 +15,7 @@ Eksiklerim :
 
 3- 2.sayfada random bir ürün seçmemiz bekleniyor fakat ürünleri bir listeye atmama rağmen sadece index = 5 olana tıklayabiliyorum. O yüzden methodu random yapamadım.
 
-Ekstra : Sayfadaki ve sepetteki fiyatları karşılaştırabiliyorum. Fakat sepette başka ürün kalırsa,(Gerçek zamanlı düşündüğümde daha önceden sepete ekleyip satın almadıklarım olabilir.) O ürünleri silmem gerekir. Bu ekstrayı yapmak istedim fakat zaman kalmadığından yetiştiremedim.
+Ekstra : Sayfadaki ve sepetteki fiyatları karşılaştırabiliyorum. Fakat sepette başka ürün kalırsa,(Gerçek zamanlı düşündüğümde daha önceden sepete ekleyip satın almadıklarım olabilir.) o ürünleri silmem gerekir. Bu ekstrayı yapmak istedim fakat diğer işlemlerimi etkilediğinden atladım.
 
 Ekstra : Bilgisayar yazdığımda, gerçekten bilgisayar mı yazmışım diye kontrol etmek istedim fakat bazı hatalar aldığımdan dolayı bu ekstrayı atladım.
 
