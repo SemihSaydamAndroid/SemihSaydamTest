@@ -36,14 +36,18 @@ public class LoginPage {
         webDriver.findElement(By.id("password")).sendKeys(password);     // write password
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.id("loginButton"))).click();
         Assert.assertEquals("n11.com - Alışverişin Uğurlu Adresi",webDriver.getTitle());  // Control to Come back to Home page
+        //search();
+
+        //public void search() {}
 
         ////________________________________________________________________________________SEARCH______________________________________________________________________
 
         WebElement searchData = webDriver.findElement(By.id("searchData"));
         searchData.sendKeys("Bilgisayar");
         searchData.sendKeys(Keys.ENTER);
+        //secondPage();
 
-
+        //public void secondPage() {}
         ////________________________________________________________________________________2ND PAGE______________________________________________________________________
 
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"contentListing\"]/div/div/div[2]/div[4]/a[2]"))).click();
@@ -53,6 +57,8 @@ public class LoginPage {
         Assert.assertTrue("2.sayfaya ulaşılamadı", page.equals("2"));
         ////
 
+        //randomSelect();
+        //public void randomSelect(){}
         ////________________________________________________________________________________RANDOM SELECT_________________________________________________________________
 
         // TODO Random select product(not working. I select first item because only this clickable)
@@ -62,6 +68,9 @@ public class LoginPage {
         // index += 4;
         //products.get(index).click();
         products.get(5).click();
+        //basket();
+
+        //public void basket(){}
 
         ////________________________________________________________________________________BASKET _________________________________________________________________________
 
@@ -77,21 +86,27 @@ public class LoginPage {
         //webDriverWait.until(ExpectedConditions.elementToBeClickable(By.id("allItemSelected"))).click();
        //webDriverWait.until(ExpectedConditions.elementToBeClickable(By.className("removeProd svgIcon svgIcon_trash"))).click();
         //
+        //controlPrize();
 
+        //public void controlPrize(){}
         //________________________________________________________________________CONTROL PRİZE__________________________________________________________________________
 
         WebElement productBasketPrice = webDriver.findElement(By.className("productPrice"));
         String basketValue = productBasketPrice.getAttribute("value").toString();
         //basketValue = "6423.55"; //Test my assertTure command line
         Assert.assertTrue("Sayfadaki fiyat ile Sepetteki fiyat aynı değil!",value.equals(basketValue));  // compare value of search page prize with basket prize
+        //increaseProduct();
 
+        //public void increaseProduct(){}
         //________________________________________________________________________INCREASE PRODUCT__________________________________________________________________________
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("span[class='spinnerUp spinnerArrow']"))).click(); // increase products to 2
         //Control products pieces
         WebElement productCount = webDriver.findElement(By.className("quantity"));
         String productValue = productCount.getAttribute("value").toString();
         Assert.assertTrue("Lütfen adeti 2 yapınız.",productValue.equals("2"));
+        //erase();
 
+        //public void erase(){}
         ////___________________________________________________________________ERASE AND CONTROL "Sepetiniz boş"__________________________________________________________
 
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("span[title='Sil']"))).click();   ///Erase basket item
